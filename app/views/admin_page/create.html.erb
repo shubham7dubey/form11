@@ -1,0 +1,42 @@
+<body style="color: black;">
+
+  <div>
+  
+
+
+<br>
+<br>
+<br>
+
+
+<%	a=User.find_by_registration_id(@regi_prev) %>
+
+
+<%= form_tag admin_page_save_path do %>
+ <p1 style="color:black;" > Registration Id   </p1>		
+ <%= text_field_tag :reg,  @regi , :readonly => true%>		
+ <br>
+ <br>
+<p1 style="color:black;" > Role   </p1>
+ <%= text_field_tag :role,  @role  , :readonly => false%>
+<br>
+<br>
+<p1 style="color:black;" > Email   </p1>
+ <%= text_field_tag :email,  @email  , :readonly => false%>
+<br>
+<br>
+<p1 style="color:black;" > UserName   </p1>
+ <%= text_field_tag :user,  @user  , :readonly => false%>
+
+<%= submit_tag "Save" %>
+<% end %>
+
+
+
+
+</div>
+
+
+
+
+</body>

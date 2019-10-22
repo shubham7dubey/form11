@@ -1,0 +1,72 @@
+<head>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+</head>
+
+
+
+
+
+
+
+
+<body style="color: black;">
+
+  <div>
+  <%= form_tag admin_page_new_path do %>
+  <p style="color: black;">Enter ID</p>
+  <%= text_field_tag(:regid) %>
+  <br>
+  <%= submit_tag "search" %>
+  <% end %>
+
+
+
+
+<br>
+<br>
+<br>
+
+<% a=User.find_by_registration_id(@id) %>
+
+<% if a %>
+<%= form_tag admin_page_create_path do %>
+
+ <p1 style="color:black;" > Registration Id   </p1>		
+ <%= text_field_tag :reg,  a.registration_id , :readonly => true%>		
+ <br>
+ <br>
+<p1 style="color:black;" > Role   </p1>
+ <%= text_field_tag :role,  a.role  , :readonly => true%>
+<br>
+<br>
+<p1 style="color:black;" > Email   </p1>
+ <%= text_field_tag :email,  a.email  , :readonly => true%>
+<br>
+<br>
+<p1 style="color:black;" > UserName   </p1>
+ <%= text_field_tag :user,  a.username  , :readonly => true%>
+
+<%= submit_tag "Edit" %>
+<% end %>
+
+<% else %>
+
+
+<p1 style="color: black;"> No Id Selected/ Select Correct Id  </p1>
+
+<% end %>
+
+
+
+</div>
+
+
+
+
+</body>

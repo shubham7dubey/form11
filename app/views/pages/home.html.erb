@@ -1,0 +1,51 @@
+
+
+
+
+<div class="left">
+<br>
+<a href="users/sign_up"><button class="btn btn-info btn-lg" style="float: right;"> Sign Up </button></a>&nbsp;&nbsp;&nbsp;
+<a href="users/sign_in"><button class="btn btn-info btn-lg" style="float: right;margin-right: 50px;">Login </button></a>
+</div>
+
+
+
+<div class="image" style="margin-left:  320px;">
+<div class="img"><%= image_tag("logo/img1.jpg" , height: '450',width: '800') %></div>
+<div class="img"><%= image_tag("logo/macs.jpg" , height: '450',width: '800') %></div>
+<div class="img"><%= image_tag("logo/nitk.jpg" , height: '450',width: '800') %></div>
+</div>
+
+
+
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("img");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 3000); // Change image every 2 seconds
+}
+</script>
+
+
+<style >
+	
+
+
+
+
+
+
+
+
+
+</style>

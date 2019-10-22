@@ -1,0 +1,66 @@
+<head>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+</head>
+
+
+
+
+<div style="margin-left: 750px; margin-top: 10px;  width: 350px; height: 50px;" > <br><font
+  size="6" style="margin-left:120px; color: black; " >Sign Up</font> </div>
+<div style="width: 650px;color: black; height: 550px;margin-top: 130px; background: transparent;box-shadow: 0px 10px 20px rgba(0,0,0,.5);border-radius: 5px;transition: .5s; top: 50%;left: 50%; position: absolute;transform: translate(-50%,-50%); box-sizing: border-box; ">
+
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+<div class="field" style=" font-family: monospace;margin-top: 50px;margin-left: 20px" >
+    <%= f.label :username %>
+    <%= f.text_field :username%>
+
+  </div>
+
+  <div class="field" style=" font-family: monospace;margin-top: 50px;margin-left: 20px" >
+    <%= f.label :registration_id %>
+    <%= f.text_field :registration_id%>
+    
+  </div>
+
+  <div class="field" style=" font-family: monospace;margin-top: 50px;margin-left: 20px" >
+    <%= f.label :email %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field" style=" font-family: monospace;margin-top: 20px;margin-left: 20px">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    
+    <% end %>
+    <%= f.password_field :password, autocomplete: "new-password" %>
+    <br>
+  <em>(<%= @minimum_password_length %> characters minimum)</em>
+  </div>
+
+  <div class="field" style=" font-family: monospace;margin-top: 20px;margin-left: 20px" >
+    <%= f.label :"Confirm" %> 
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  
+  
+  </div>
+
+
+
+  <div class="actions" style="margin-left: 120px; font-family: monospace;margin-top: 20px">
+    <%= f.submit "Sign up" %>
+   
+  </div>
+<% end %>
+
+<br>
+<span style="font-family: monospace; margin-top: 100px;margin-left: 20px; color: #5ea81d" >Already a member?  <%= render "devise/shared/links" %></span>
+</div>
