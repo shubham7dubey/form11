@@ -11,7 +11,8 @@ threads min_threads_count, max_threads_count
 # Specifies the `port` that Puma will listen on to receive requests; default is 3000.
 #
 #port        ENV.fetch("PORT") { 3000 }
-bind         'tcp://10.11.0.60:3000'
+#bind         '10.11.0.60'
+rails s -p 3000 -b 10.11.0.60
 # Specifies the `environment` that Puma will run in.
 #
 environment ENV.fetch("RAILS_ENV") { "development" }
